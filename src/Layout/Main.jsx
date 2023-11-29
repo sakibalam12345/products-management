@@ -1,11 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../Pages/Navbar/Navbar";
 
 
 const Main = () => {
+    const location = useLocation();
+    const noheader = location.pathname.includes('jasemp')
     return (
         <div>
-            <Navbar></Navbar>
+           {noheader || <Navbar></Navbar>}
             <Outlet></Outlet>
         </div>
     );
