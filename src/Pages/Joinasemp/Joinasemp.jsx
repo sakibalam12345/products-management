@@ -1,17 +1,47 @@
 
+import { FaGoogle } from 'react-icons/fa';
+import  { AuthContext } from '../../Authprovider/Authprovider';
+import { useContext } from 'react';
+import Useaxiouspublic from '../../Axious/Useaxiouspublic';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const Joinasemp = () => {
 
-    const handleemplogin = e =>{
+  const {createnewuser} = useContext(AuthContext);
+  const axiouspublic = Useaxiouspublic();
+  const navigate = useNavigate();
+
+    const handleemplogin = async(e) =>{
         e.preventDefault()
         const form = e.target;
         const fullname = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
         const dateofbirth = form.date.value;
-        console.log(fullname,email,password,dateofbirth)
+        console.log(fullname,email,password,dateofbirth);
+
+   const res = await createnewuser(email,password)
+   console.log(res.user)
+        
+          const emplyinfo = {
+            fullname,email,dateofbirth, role : 'employee'
+          }
+
+          const result = await axiouspublic.post('/employee',emplyinfo)
+          console.log(result.data)
+          if(result.data.insertedId){
+            Swal.fire({
+              title: "Good job!",
+              text: "You Logged in As Employee!",
+              icon: "success"
+            });
+            navigate('/dashboard/emphome')
+          }
+          form.reset()
+     
     }
-  
+   
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -48,6 +78,7 @@ const Joinasemp = () => {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Join as Employee</button>
         </div>
+        <p className="p-5 text-center">Login with Google <button><FaGoogle></FaGoogle></button></p>
       </form>
     </div>
   </div>
