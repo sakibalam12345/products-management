@@ -1,15 +1,32 @@
+import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
+import { AuthContext } from "../../Authprovider/Authprovider";
+import useEmploye from "../../Hook/useEmploye";
+import { useNavigate } from "react-router-dom";
 
 
 const Login = () => {
+  const {login} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [employee] = useEmploye();
     const handlelogin = e =>{
         e.preventDefault();
         const form = e.target;
         const email = form.email.value
         const password = form.password.value;
         console.log(email,password)
-
+          login(email,password)
+          .then(result=>{
+            console.log(result.user)
+            const mactheemployee = employee.find(emp=> emp.email === email && emp.role === 'employee')
+            if(mactheemployee){
+             navigate('/dashboard/emphome')
+            }
+            
+          })
+          .catch()
     }
+
     return (
         <div>
         <div className="hero min-h-screen bg-base-200">

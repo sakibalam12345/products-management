@@ -9,7 +9,7 @@ import { Container } from 'postcss';
 
 const Joinasemp = () => {
 
-  const {createnewuser} = useContext(AuthContext);
+  const {createnewuser,updateuserprofile} = useContext(AuthContext);
   const axiouspublic = Useaxiouspublic();
   const navigate = useNavigate();
 
@@ -25,9 +25,16 @@ const Joinasemp = () => {
 
    const res = await createnewuser(email,password)
    console.log(res.user)
+   updateuserprofile(fullname,image)
+   .then(()=>{
+
+   })
+   .catch(error=>{
+    console.log(error)
+   })
         
           const emplyinfo = {
-            fullname,email,dateofbirth, role : 'employee'
+            fullname,email,image,dateofbirth, role : 'employee'
           }
 
           const result = await axiouspublic.post('/employee',emplyinfo)

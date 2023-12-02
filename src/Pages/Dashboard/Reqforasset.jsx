@@ -1,10 +1,13 @@
 import Swal from "sweetalert2";
 import useAsset from "../../Hook/useAsset";
+import { useContext } from "react";
+import { AuthContext } from "../../Authprovider/Authprovider";
 
 
 
 const Reqforasset = () => {
     const [asset] = useAsset();
+    const {user} = useContext(AuthContext);
 
     const handlemodal = (id)=>{
         console.log(id)
@@ -25,6 +28,8 @@ const Reqforasset = () => {
             console.log(inputtest)
             }
           });
+
+          console.log(user)
          
 
     }

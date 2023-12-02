@@ -11,6 +11,7 @@ import Customasset from "../Pages/Dashboard/Customasset";
 import Profile from "../Pages/Dashboard/Profile";
 import Myteam from "../Pages/Dashboard/Myteam";
 import Login from "../Pages/Login/Login";
+import Updateprofile from "../Pages/Updateprofile/Updateprofile";
 
 
 
@@ -62,6 +63,12 @@ const router = createBrowserRouter([
       {
         path : 'profile',
         element : <Profile></Profile>
+      },
+      {
+        path : 'updateprofile/:id',
+        element : <Updateprofile></Updateprofile>,
+        loader : ({params})=> fetch(`http://localhost:5000/employee/${params.id}`)
+
       }
      ]
     }
