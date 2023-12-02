@@ -1,9 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import Useaxiouspublic from "../../Axious/Useaxiouspublic";
+import Swal from "sweetalert2";
 
 
 const Updateprofile = () => {
     const item = useLoaderData();
+    console.log(item)
     const axiouspublic = Useaxiouspublic();
   
     const handleupdate =(e)=>{
@@ -13,11 +15,19 @@ const Updateprofile = () => {
         const fullname = form.fullname.value;
         const dateofbirth = form.dateofbirth.value;
         const updateprofile = {
-            fullname,dateofbirth
+            name : fullname,
+            birth : dateofbirth
         }
       axiouspublic.patch(`/employee/${item?._id}`,updateprofile)
       .then(res=>{
         console.log(res.data)
+        if(res.data.modifiedCount > 0){
+            Swal.fire({
+                title: "Good job!",
+                text: "Your Profile Updated!",
+                icon: "success"
+              });
+        }
       })
       .catch()
         console.log(fullname) 

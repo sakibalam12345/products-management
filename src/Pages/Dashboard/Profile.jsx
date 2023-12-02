@@ -9,8 +9,8 @@ const Profile = () => {
     const [employee] = useEmploye();
     const {user} = useContext(AuthContext);
     const showdata = employee.find(emp=> emp?.email === user?.email)
-    // console.log(user)
-    // console.log(showdata._id)
+    console.log(user)
+    console.log(showdata?._id)
    
     return (
         <div>
