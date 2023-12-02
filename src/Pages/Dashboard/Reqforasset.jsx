@@ -33,7 +33,7 @@ const Reqforasset = () => {
             <div className="grid grid-cols-3 gap-5">
                 {asset.map(singleasset=> <div className="card w-[400px] h-[450px] bg-base-100 shadow-xl" key={singleasset._id}>
   <figure className="px-10 pt-10">
-    <img src={singleasset.image} alt="Shoes" className="rounded-xl" />
+    <img src={singleasset.image} alt="Shoes" className="rounded-xl h-[150px]" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">{singleasset.assetName}</h2>

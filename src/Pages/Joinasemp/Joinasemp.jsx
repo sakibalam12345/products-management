@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import Useaxiouspublic from '../../Axious/Useaxiouspublic';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { Container } from 'postcss';
 
 const Joinasemp = () => {
 
@@ -19,7 +20,8 @@ const Joinasemp = () => {
         const email = form.email.value;
         const password = form.password.value;
         const dateofbirth = form.date.value;
-        console.log(fullname,email,password,dateofbirth);
+        const image = form.image.value;
+        console.log(fullname,email,password,dateofbirth,image);
 
    const res = await createnewuser(email,password)
    console.log(res.user)
@@ -74,6 +76,12 @@ const Joinasemp = () => {
             <span className="label-text">Date Of Birth</span>
           </label>
           <input type="date" name="date" className="input input-bordered" required />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Image Url</span>
+          </label>
+          <input type="text" name='image' placeholder="Image Url" className="input input-bordered" />
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Join as Employee</button>

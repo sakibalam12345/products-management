@@ -10,6 +10,7 @@ import Reqforasset from "../Pages/Dashboard/Reqforasset";
 import Customasset from "../Pages/Dashboard/Customasset";
 import Profile from "../Pages/Dashboard/Profile";
 import Myteam from "../Pages/Dashboard/Myteam";
+import Login from "../Pages/Login/Login";
 
 
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         {
             path : '/jasemp',
             element : <Joinasemp></Joinasemp>
+        },
+        {
+          path : '/login',
+          element : <Login></Login>
         }
       ]
     },
