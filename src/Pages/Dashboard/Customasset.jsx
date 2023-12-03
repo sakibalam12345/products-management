@@ -59,7 +59,7 @@ const Customasset = () => {
 </label>
             </div>
             <div className="mb-10 flex justify-evenly items-center">
-            <select name="assettype" className="select select-bordered w-[400px] max-w-xs">
+            <select name="assettype" className="select select-bordered w-[400px] mt-6 max-w-xs">
   <option disabled selected>Asset Type</option>
   <option>Returnable</option>
   <option>Non Returnable</option>
@@ -71,7 +71,7 @@ const Customasset = () => {
   <input type="text" name="assetimg" placeholder="Type here" className="input p-2 input-bordered w-[400px] " />
 </label>
             </div>
-            <div className="mb-10 flex justify-evenly items-center">
+            <div className="mb-10 mt-3 flex justify-evenly items-center">
             <label className="form-control w-full max-w-xs">
   <div className="label">
     <span className="label-text">Why you need this</span>
@@ -84,7 +84,7 @@ const Customasset = () => {
   </div>
   <input type="text" name="additionaleinfo" placeholder="Type here" className="input input-bordered w-[400px] " />
 </label>
-<select name="status" className="select select-bordered w-full max-w-xs">
+<select name="status" className="select select-bordered mt-8 w-full max-w-xs">
   <option disabled selected>Status</option>
   <option>Available</option>
   <option>Out of stock</option>
