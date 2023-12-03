@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const Login = () => {
-  const {login} = useContext(AuthContext);
+  const {login,updateuserprofile} = useContext(AuthContext);
   const navigate = useNavigate();
   const [employee] = useEmploye();
     const handlelogin = e =>{
@@ -18,6 +18,11 @@ const Login = () => {
           login(email,password)
           .then(result=>{
             console.log(result.user)
+            updateuserprofile()
+            .then(res=>{
+              console.log(res?.user)
+            })
+            .catch()
             const mactheemployee = employee.find(emp=> emp.email === email && emp.role === 'employee')
             if(mactheemployee){
              navigate('/dashboard/emphome')

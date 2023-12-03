@@ -2,15 +2,17 @@ import Swal from "sweetalert2";
 import useAsset from "../../Hook/useAsset";
 import { useContext } from "react";
 import { AuthContext } from "../../Authprovider/Authprovider";
+import Useaxiouspublic from "../../Axious/Useaxiouspublic";
 
 
 
 const Reqforasset = () => {
     const [asset] = useAsset();
     const {user} = useContext(AuthContext);
+    const axiouspublic = Useaxiouspublic();
 
-    const handlemodal = (id)=>{
-        console.log(id)
+    const handlemodal = (allasset)=>{
+        console.log(allasset)
           Swal.fire({
             title: "Additional Notes",
             input: "text",
@@ -18,14 +20,35 @@ const Reqforasset = () => {
             confirmButtonText : 'Request'
           }).then((result) => {
             if (result.isConfirmed) {
-            //   Swal.fire({
-            //     title: "Deleted!",
-            //     text: "Your file has been deleted.",
-            //     icon: "success"
-            //   });
+           
             const inputtest = result.value;
             const requestdate = new Date();
-            console.log(inputtest)
+            const username = user?.displayName;
+            const useremail = user?.email;
+            console.log(inputtest,requestdate,useremail,username)
+            const reqasset = {
+              assetName : allasset.assetName,
+              assetType : allasset.assetType,        
+                assetPrice : allasset.assetPrice,
+                status:allasset.status,
+                image: allasset.image,
+              Additionalinfo : inputtest,
+              requesttime : requestdate,
+              username : username ,useremail :useremail
+
+            }
+            axiouspublic.post('/assetreq',reqasset)
+            .then(res=>{
+              console.log(res.data)
+              if(res.data.insertedId){
+          Swal.fire({
+                title: "Requested!",
+                text: "Request Successful.",
+                icon: "success"
+              });
+              }
+            })
+
             }
           });
 
@@ -45,7 +68,7 @@ const Reqforasset = () => {
     <p className="font-semibold text-base pb-2">Asset Type : {singleasset.assetType}</p>
     <p className="font-semibold text-base pb-2">Availability : {singleasset.status}</p>
     <div className="card-actions">
-      {singleasset.status === 'Available' ?  <button onClick={()=>handlemodal(singleasset._id)} className="btn btn-outline">Request</button> : <button disabled className="btn btn-primary ">Request</button> }
+      {singleasset.status === 'Available' ?  <button onClick={()=>handlemodal(singleasset)} className="btn btn-outline">Request</button> : <button disabled className="btn btn-primary ">Request</button> }
     </div>
   </div>
 </div>)

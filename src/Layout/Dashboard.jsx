@@ -7,6 +7,8 @@ import { AuthContext } from "../Authprovider/Authprovider";
 
 const Dashboard = () => {
     const navigate = useNavigate();
+    const {user} = useContext(AuthContext);
+    // console.log(user)
     
     const navlinks = <>
     <li><NavLink to='/dashboard/emphome'>Home</NavLink></li>
@@ -21,7 +23,7 @@ const Dashboard = () => {
    const handlelogout = ()=>{
        logout()
        .then(res=>{
-        console.log(res?.user)
+        // console.log(res?.user)
         navigate('/')
        })
    }
@@ -47,7 +49,15 @@ const Dashboard = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <button onClick={handlelogout}>LogOut</button>
+    
+   {user?.email ? <>
+    <div className="avatar">
+    <div className="w-12 h-12 rounded-full">
+      <img src={user?.photoURL} />
+    </div>
+  </div>
+   <h2 className="mr-4">{user?.displayName}</h2>
+   <button onClick={handlelogout}>LogOut</button></>  : <button >LogIn</button>  }
   </div>
 </div> 
         </div>

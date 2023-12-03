@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import Useaxiouspublic from '../../Axious/Useaxiouspublic';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-import { Container } from 'postcss';
+
 
 const Joinasemp = () => {
 
@@ -27,7 +27,6 @@ const Joinasemp = () => {
    console.log(res.user)
    updateuserprofile(fullname,image)
    .then(()=>{
-
    })
    .catch(error=>{
     console.log(error)
