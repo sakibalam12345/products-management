@@ -10,12 +10,12 @@ const Banner = () => {
              <Carousel>
                 <div className="h-[700px]">
                     <img src="https://i.ibb.co/7gQDmB6/istockphoto-1254062265-612x612.jpg" />
-                    <Link><p className="legend"><button>Join as HR/Admin</button></p></Link>
+                    <Link to='/JoinAsadmin'><p className="legend"><button >Join as HR/Admin</button></p></Link>
                     
                 </div>
                 <div className="h-[700px]">
                     <img src="https://i.ibb.co/7rDsmF0/Rob-Long-employee-satisfaction-vs-happiness.jpg" />
-                  <Link><p className="legend"><button>Join as an Employee</button></p></Link>  
+                  <Link to='/jasemp'><p className="legend"><button>Join as an Employee</button></p></Link>  
                 </div>
                
             </Carousel>

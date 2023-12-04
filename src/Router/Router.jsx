@@ -81,17 +81,17 @@ const router = createBrowserRouter([
       {
         path : 'updateprofile/:id',
         element : <Updateprofile></Updateprofile>,
-        loader : ({params})=> fetch(`http://localhost:5000/employee/${params.id}`)
+        loader : ({params})=> fetch(`https://assignment12-psi.vercel.app/employee/${params.id}`)
       },
       {
         path : 'updatecustomview/:id',
         element : <Updatecustomview></Updatecustomview>,
-        loader :({params})=> fetch(`http://localhost:5000/customreqassetreq/${params.id}`)
+        loader :({params})=> fetch(`https://assignment12-psi.vercel.app/customreqassetreq/${params.id}`)
       },
       {
         path : 'updateview/:id',
         element : <Updateview></Updateview>,
-        loader :({params})=> fetch(`http://localhost:5000/customreqassetreq/${params.id}`)
+        loader :({params})=> fetch(`https://assignment12-psi.vercel.app/customreqassetreq/${params.id}`)
       },
       // admin
       {

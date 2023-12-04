@@ -5,7 +5,7 @@ import useReqasset from "../../Hook/useReqasset";
 const Adminhome = () => {
    const [assetreq] = useReqasset();
    const [asset] = useAsset();
-   console.log(asset)
+//    console.log(asset)
 //    top req item
 if (!Array.isArray(assetreq)) {
     return null; 
@@ -27,7 +27,7 @@ if (!Array.isArray(asset)) {
 
   
   const itemsWithLessThanTenQuantity = asset.filter((item) => item.quantity  < 10);
-  console.log(itemsWithLessThanTenQuantity)
+//   console.log(itemsWithLessThanTenQuantity)
 
 // end
     return (

@@ -21,14 +21,15 @@ const Aemployelist = () => {
             if (result.isConfirmed) {
            axiouspublic.delete(`/employee/${id}`)
            .then(res=>{
-            console.log(res.data)
-            refetch()
+            console.log(res.data.deletedCount > 0)
+            refetch();
+            Swal.fire({
+                title: "Deleted!",
+                text: "successfully removed.",
+                icon: "success"
+              });
            })
-            //   Swal.fire({
-            //     title: "Deleted!",
-            //     text: "Your file has been deleted.",
-            //     icon: "success"
-            //   });
+            
             }
           });
     }
