@@ -26,7 +26,8 @@ const Reqforasset = () => {
             const RequestStatus = 'pending';
             const username = user?.displayName;
             const useremail = user?.email;
-            console.log(inputtest,requestdate,useremail,username,RequestStatus)
+            const quantity = allasset.quantity;
+            // console.log(inputtest,requestdate,useremail,username,RequestStatus,quantity)
             const reqasset = {
               assetName : allasset.assetName,
               assetType : allasset.assetType,        
@@ -35,12 +36,14 @@ const Reqforasset = () => {
                 image: allasset.image,
               Additionalinfo : inputtest,
               requesttime : requestdate,
+              Quantity : allasset.quantity,
+
               username : username ,useremail :useremail,RequestStatus : RequestStatus
 
             }
             axiouspublic.post('/assetreq',reqasset)
             .then(res=>{
-              console.log(res.data)
+              // console.log(res.data)
               if(res.data.insertedId){
           Swal.fire({
                 title: "Requested!",
@@ -53,7 +56,7 @@ const Reqforasset = () => {
             }
           });
 
-          console.log(user)
+          // console.log(user)
          
 
     }

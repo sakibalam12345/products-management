@@ -11,7 +11,7 @@ const Dashboard = () => {
     const {user} = useContext(AuthContext);
     const [employee] = useEmploye();
     const mactheemployee = employee.find(emp=> emp.email === user?.email && emp.role === 'employee')
-    console.log(user)
+    // console.log(user)
     
     const navlinks = <>
     {
@@ -71,7 +71,7 @@ const Dashboard = () => {
       <img src={user?.photoURL} />
     </div>
   </div>
-   <h2 className="mr-4">{user?.displayName}</h2>
+   <h2 className="mr-4 ml-2">{user?.displayName}</h2>
    <button onClick={handlelogout}>LogOut</button></>  : <button >LogIn</button>  }
   </div>
 </div> 

@@ -19,7 +19,8 @@ const Emphome = () => {
             {customreqassetreq.length === 0 ? 'hidden' : <>
             <div >   
                 
-                <h2 className="text-center font-bold text-4xl mt-6 mb-6 underline">My Custom Requests</h2>
+                
+                
                 <div className="grid grid-cols-3 gap-6">
                 {customreqassetreq.map(cusreq=><div className="card w-[400px] h-[450px] bg-base-100 shadow-xl" key={cusreq._id}>
        <figure className="px-10 pt-10">
