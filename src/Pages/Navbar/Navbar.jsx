@@ -20,7 +20,7 @@ const Navbar = () => {
     const navlinks = <>
      <li><NavLink>Home</NavLink></li>
      <li><NavLink to='/jasemp'>Join as Employee</NavLink></li>
-     <li><NavLink>Join as HR/Admin</NavLink></li>
+     <li><NavLink to='/JoinAsadmin'>Join as HR/Admin</NavLink></li>
      <li><NavLink to='/login'>Login</NavLink></li>
         
     </>

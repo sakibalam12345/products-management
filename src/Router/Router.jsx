@@ -14,6 +14,14 @@ import Login from "../Pages/Login/Login";
 import Updateprofile from "../Pages/Updateprofile/Updateprofile";
 import Updatecustomview from "./Updatecustomview/Updatecustomview";
 import Updateview from "./Updateview/Updateview";
+import JoinAsadmin from "../Pages/JoinAsadmin/JoinAsadmin";
+import Adminhome from "../Pages/AdminHome/Adminhome";
+import Aassetlist from "../Pages/AdminHome/AassetList/Aassetlist";
+import Aaddanasset from "../Pages/Aaddanasset/Aaddanasset";
+import Aallreq from "../Pages/Aallreq/Aallreq";
+import Acustomreqlist from "../Pages/Aallreq/Acustomreqlist/Acustomreqlist";
+import Aemployelist from "../Pages/Aallreq/Acustomreqlist/Aemployelist/Aemployelist";
+import Aaddanemploye from "../Pages/Aallreq/Acustomreqlist/Aemployelist/Aaddanemploye/Aaddanemploye";
 
 
 
@@ -30,6 +38,10 @@ const router = createBrowserRouter([
         {
             path : '/jasemp',
             element : <Joinasemp></Joinasemp>
+        },
+        {
+          path  : '/JoinAsadmin',
+          element : <JoinAsadmin></JoinAsadmin>
         },
         {
           path : '/login',
@@ -80,7 +92,39 @@ const router = createBrowserRouter([
         path : 'updateview/:id',
         element : <Updateview></Updateview>,
         loader :({params})=> fetch(`http://localhost:5000/customreqassetreq/${params.id}`)
-      }
+      },
+      // admin
+      {
+        path : 'adminhome',
+        element : <Adminhome></Adminhome>
+      },
+      {
+        path : 'adminassetlist',
+        element : <Aassetlist></Aassetlist>
+      },
+      {
+        path : 'adminaddanasset',
+        element : <Aaddanasset></Aaddanasset>
+      },
+      {
+        path : 'adminallreq',
+        element : <Aallreq></Aallreq>
+      },
+     
+      {
+        path : 'admincustomreqlist',
+        element : <Acustomreqlist></Acustomreqlist>
+      },
+     
+      {
+        path : 'adminemployelist',
+        element : <Aemployelist></Aemployelist>
+      },
+      {
+        path : 'adminaddemploye',
+        element : <Aaddanemploye></Aaddanemploye>
+      },
+     
      ]
     }
     // 

@@ -26,6 +26,8 @@ const Login = () => {
             const mactheemployee = employee.find(emp=> emp.email === email && emp.role === 'employee')
             if(mactheemployee){
              navigate('/dashboard/emphome')
+            }else{
+              navigate('/dashboard/adminhome')
             }
             
           })
