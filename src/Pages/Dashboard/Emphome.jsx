@@ -49,18 +49,19 @@ const Emphome = () => {
            <div>
             <h2 className="text-center font-bold text-4xl mt-6 mb-6 underline">My pending requests</h2>
             <div>
+              
             <div className="grid grid-cols-3 gap-5">
                 {sortedRequests.map(req=>  <div className="card  bg-base-100 w-[400px] h-[450px] shadow-xl" key={req._id}>
   <figure className="px-10 pt-10">
     <img src={req.image} alt="Shoes" className="rounded-xl h-[150px]" />
   </figure>
   <div className="card-body items-center text-center">
-    <h2 className="card-title">{req.assetName}</h2>
+    <h2 className="card-title">Asset name : {req.assetName}</h2>
     <p className="font-semibold text-lg">Type : {req.assetType}</p>
     <p className="font-semibold text-lg">Price : {req.assetPrice}</p>
     <p className="font-semibold text-lg">Request Date : {req.requesttime}</p>
     <p></p>
-    <p>Pending</p>
+    <p className="font-semibold text-lg">Request Status :{req.RequestStatus}</p>
   </div>
 </div>)}
             </div>

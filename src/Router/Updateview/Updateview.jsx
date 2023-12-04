@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Useaxiouspublic from "../../Axious/Useaxiouspublic";
 import Swal from "sweetalert2";
 
@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 const Updateview = () => {
     const item = useLoaderData();
     const axiouspublic = Useaxiouspublic();
+    const navigate = useNavigate();
     console.log(item)
     const {Price,additionaleinfo,assetimg,assetname,assettype,requesteddate,status,whyneedthis,_id} = item;
     const handleupdateview = e=>{
@@ -44,6 +45,9 @@ const Updateview = () => {
             }
         })
 
+    }
+    const handlecancel = ()=>{
+      navigate(-1)
     }
     return (
         <div className="max-w-7xl mx-auto">
@@ -106,9 +110,13 @@ const Updateview = () => {
            </div>
            <div className="flex justify-center items-center gap-5"> 
            <button className="btn btn-wide mt-6">Save</button>
-           <button className="btn btn-wide mt-6">Cancel</button>
+           
            </div>
            </form>
+           <div className="flex justify-center items-center">
+           <button onClick={handlecancel} className="btn btn-wide mt-6">Cancel</button>
+           </div>
+           
         </div>
     );
 };

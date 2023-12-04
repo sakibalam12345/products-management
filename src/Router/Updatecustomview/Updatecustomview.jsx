@@ -1,10 +1,14 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 
 const Updatecustomview = () => {
     const item = useLoaderData();
+    const navigate = useNavigate();
     const {Price,additionaleinfo,assetimg,assetname,assettype,requesteddate,status,whyneedthis,_id} = item;
-    console.log(item)
+    // console.log(item)
+    const handleclose = ()=>{
+      navigate(-1)
+    }
     return (
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-center items-center mt-16">
@@ -25,7 +29,7 @@ const Updatecustomview = () => {
         <button className="btn btn-outline">Update</button>
         </Link>
       
-      <button className="btn btn-outline">Close</button>
+      <button onClick={handleclose} className="btn btn-outline">Close</button>
     </div>
   </div>
 </div>

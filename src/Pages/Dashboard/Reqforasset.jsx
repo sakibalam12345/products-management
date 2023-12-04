@@ -23,9 +23,10 @@ const Reqforasset = () => {
            
             const inputtest = result.value;
             const requestdate = new Date();
+            const RequestStatus = 'pending';
             const username = user?.displayName;
             const useremail = user?.email;
-            console.log(inputtest,requestdate,useremail,username)
+            console.log(inputtest,requestdate,useremail,username,RequestStatus)
             const reqasset = {
               assetName : allasset.assetName,
               assetType : allasset.assetType,        
@@ -34,7 +35,7 @@ const Reqforasset = () => {
                 image: allasset.image,
               Additionalinfo : inputtest,
               requesttime : requestdate,
-              username : username ,useremail :useremail
+              username : username ,useremail :useremail,RequestStatus : RequestStatus
 
             }
             axiouspublic.post('/assetreq',reqasset)
@@ -66,6 +67,7 @@ const Reqforasset = () => {
   <div className="card-body items-center text-center">
     <h2 className="card-title">{singleasset.assetName}</h2>
     <p className="font-semibold text-base pb-2">Asset Type : {singleasset.assetType}</p>
+    <p className="font-semibold text-base pb-2">Price : {singleasset.assetPrice}</p>
     <p className="font-semibold text-base pb-2">Availability : {singleasset.status}</p>
     <div className="card-actions">
       {singleasset.status === 'Available' ?  <button onClick={()=>handlemodal(singleasset)} className="btn btn-outline">Request</button> : <button disabled className="btn btn-primary ">Request</button> }
