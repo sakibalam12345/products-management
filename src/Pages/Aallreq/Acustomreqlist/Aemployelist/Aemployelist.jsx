@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import useEmploye from "../../../../Hook/useEmploye";
 import Useaxiouspublic from "../../../../Axious/Useaxiouspublic";
+import { Helmet } from "react-helmet-async";
 
 
 const Aemployelist = () => {
@@ -35,6 +36,10 @@ const Aemployelist = () => {
     }
     return (
         <div>
+                <Helmet>
+        <title>abc || My Employe</title>
+      
+      </Helmet>
         {/* start */}
         <div>
 

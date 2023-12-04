@@ -2,6 +2,7 @@ import { useContext } from "react";
 import useEmploye from "../../Hook/useEmploye";
 import { AuthContext } from "../../Authprovider/Authprovider";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const Profile = () => {
@@ -14,6 +15,10 @@ const Profile = () => {
    
     return (
         <div>
+                  <Helmet>
+        <title>abc || Profile</title>
+      
+      </Helmet>
             <h3 className="text-center font-extrabold text-4xl mt-20">Profile Page</h3>
         <div className="flex justify-center items-center mt-36">
             

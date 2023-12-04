@@ -1,4 +1,6 @@
+import { Helmet } from "react-helmet-async";
 import Useaxiouspublic from "../../Axious/Useaxiouspublic";
+import Swal from "sweetalert2";
 
 
 const Aaddanasset = () => {
@@ -17,17 +19,29 @@ const Aaddanasset = () => {
       quantity : quantity,
       reqdate : reqdate
      }
-     axiouspublic.post('/adminreq',adminreqinfo)
+     axiouspublic.post('adminreq',adminreqinfo)
      .then(res=>{
       console.log(res.data)
+      if(res.data.insertedId){
+        form.reset();
+        Swal.fire({
+          title: "Good job!",
+          text: "Asset Added!",
+          icon: "success"
+        });
+      }
      })
   }
     return (
         <div className=" ">
             {/* start */}
+            <Helmet>
+        <title>abc || Add An Asset</title>
+        
+      </Helmet>
             <form onSubmit={handleadd}>
+            <h2 className="font-bold text-center text-4xl mb-5 underline">Add an Asset Page</h2>
             <div className="flex justify-center items-center gap-5">
-              
             <label className="form-control w-full max-w-xs">
   <div className="label">
     <span className="label-text">Product Name</span>

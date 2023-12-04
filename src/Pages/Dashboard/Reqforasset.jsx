@@ -3,6 +3,7 @@ import useAsset from "../../Hook/useAsset";
 import { useContext } from "react";
 import { AuthContext } from "../../Authprovider/Authprovider";
 import Useaxiouspublic from "../../Axious/Useaxiouspublic";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -36,7 +37,7 @@ const Reqforasset = () => {
                 image: allasset.image,
               Additionalinfo : inputtest,
               requesttime : requestdate,
-              Quantity : allasset.quantity,
+              Quantity : quantity,
 
               username : username ,useremail :useremail,RequestStatus : RequestStatus
 
@@ -62,6 +63,10 @@ const Reqforasset = () => {
     }
     return (
         <div className="max-w-7xl mx-auto">
+          <Helmet>
+        <title>abc || Req For An Asset</title>
+        
+      </Helmet>
             <div className="grid grid-cols-3 gap-5">
                 {asset.map(singleasset=> <div className="card w-[400px] h-[450px] bg-base-100 shadow-xl" key={singleasset._id}>
   <figure className="px-10 pt-10">

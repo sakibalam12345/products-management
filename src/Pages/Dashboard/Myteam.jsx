@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import useEmploye from "../../Hook/useEmploye";
 
 
@@ -20,6 +21,10 @@ const Myteam = () => {
     return (
         <div>
             {/* start */}
+            <Helmet>
+        <title>abc || My Team</title>
+        
+      </Helmet>
             <div className="mb-30">
             <h3 className="text-center font-bold text-4xl mt-6  underline ">Upcoming events Section</h3> 
             <div>

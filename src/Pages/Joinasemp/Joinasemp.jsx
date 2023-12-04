@@ -5,6 +5,8 @@ import { useContext } from 'react';
 import Useaxiouspublic from '../../Axious/Useaxiouspublic';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import Sociallogin from '../Sociallogin/Sociallogin';
+import { Helmet } from 'react-helmet-async';
 
 
 const Joinasemp = () => {
@@ -52,6 +54,10 @@ const Joinasemp = () => {
    
     return (
         <div>
+               <Helmet>
+        <title>abc || Join As Employe</title>
+        
+      </Helmet>
             <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
@@ -92,7 +98,7 @@ const Joinasemp = () => {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Join as Employee</button>
         </div>
-        <p className="p-5 text-center">Login with Google <button><FaGoogle></FaGoogle></button></p>
+       <Sociallogin></Sociallogin>
       </form>
     </div>
   </div>

@@ -4,6 +4,8 @@ import Swal from "sweetalert2";
 import Useaxiouspublic from "../../Axious/Useaxiouspublic";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Authprovider/Authprovider";
+import Sociallogin from "../Sociallogin/Sociallogin";
+import { Helmet } from "react-helmet-async";
 
 
 const JoinAsadmin = () => {
@@ -54,6 +56,10 @@ const JoinAsadmin = () => {
       }
     return (
         <div>
+               <Helmet>
+        <title>abc || Join As Admin</title>
+        
+      </Helmet>
         <div className="hero min-h-screen bg-base-200">
 <div className="hero-content flex-col lg:flex-row-reverse">
 <div className="text-center lg:text-left">
@@ -117,7 +123,7 @@ const JoinAsadmin = () => {
     <div className="form-control mt-6">
       <button className="btn btn-primary">Join as Admin</button>
     </div>
-    <p className="p-5 text-center">Login with Google <button><FaGoogle></FaGoogle></button></p>
+   <Sociallogin></Sociallogin>
   </form>
 </div>
 </div>

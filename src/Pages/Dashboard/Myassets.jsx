@@ -1,4 +1,5 @@
 
+import { Helmet } from "react-helmet-async";
 import useReqasset from "../../Hook/useReqasset";
 import {  MdCancel,MdKeyboardReturn, MdLocalPrintshop } from 'react-icons/md';
 
@@ -9,6 +10,10 @@ const Myassets = () => {
   console.log(assetreq)
     return (
         <div className="max-w-7xl mx-auto">
+               <Helmet>
+        <title>abc || My Asset</title>
+        
+      </Helmet>
         <div >
           <div>
           <div className="overflow-x-auto">

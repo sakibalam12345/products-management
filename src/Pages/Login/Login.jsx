@@ -3,6 +3,8 @@ import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Authprovider/Authprovider";
 import useEmploye from "../../Hook/useEmploye";
 import { useNavigate } from "react-router-dom";
+import Sociallogin from "../Sociallogin/Sociallogin";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -36,6 +38,10 @@ const Login = () => {
 
     return (
         <div>
+               <Helmet>
+        <title>abc || Login</title>
+        
+      </Helmet>
         <div className="hero min-h-screen bg-base-200">
 <div className="hero-content flex-col lg:flex-row-reverse">
 <div className="text-center lg:text-left">
@@ -58,7 +64,7 @@ const Login = () => {
     <div className="form-control mt-6">
       <button className="btn btn-primary">LogIn</button>
     </div>
-    <p className="p-5 text-center">Login with Google <button><FaGoogle></FaGoogle></button></p>
+    <Sociallogin></Sociallogin>
   </form>
 </div>
 </div>

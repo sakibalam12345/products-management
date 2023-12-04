@@ -1,3 +1,4 @@
+
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Link } from "react-router-dom";
@@ -7,6 +8,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
     return (
         <div className="max-w-7xl mx-auto mt-20">
+         
              <Carousel>
                 <div className="h-[700px]">
                     <img src="https://i.ibb.co/7gQDmB6/istockphoto-1254062265-612x612.jpg" />

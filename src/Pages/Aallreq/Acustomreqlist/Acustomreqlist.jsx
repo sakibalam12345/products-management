@@ -1,11 +1,19 @@
+import { Helmet } from "react-helmet-async";
 import useCustomreq from "../../../Hook/useCustomreq";
 
 
 const Acustomreqlist = () => {
     const   [customreqassetreq] = useCustomreq();
-    console.log(customreqassetreq)
+    console.log(customreqassetreq);
+    const handleapprove = (id)=>{
+      console.log(id)
+    }
     return (
         <div className="max-w-7xl mx-auto">
+                <Helmet>
+        <title>abc || Custom Req List</title>
+      
+      </Helmet>
            {/* start */}
            <h3 className="text-center font-bold text-4xl mt-6 mb-6 underline">Custom Requests List Page</h3>
            <div className="grid grid-cols-3 gap-5">
@@ -20,7 +28,7 @@ const Acustomreqlist = () => {
     <p className="font-semibold text-base"> Why you need this : {item.whyneedthis}</p>
     <p className="font-semibold text-base">Additional information : {item.additionaleinfo}</p>
     <div className="card-actions">
-      <button className="btn btn-outline">Approve Button</button>
+      <button onClick={()=>handleapprove(item._id)} className="btn btn-outline">Approve Button</button>
       <button className="btn btn-outline">Reject Button</button>
     </div>
   </div>

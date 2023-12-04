@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import Useaxiouspublic from "../../Axious/Useaxiouspublic";
+import { Helmet } from "react-helmet-async";
 
 
 const Customasset = () => {
@@ -42,6 +43,10 @@ const Customasset = () => {
 
     return (
         <div>
+          <Helmet>
+        <title>abc || Custom Req</title>
+      
+      </Helmet>
             <h3 className="text-center font-bold text-4xl mt-6 mb-28  underline ">Custom Request Page</h3>
             <form onSubmit={handlecustomreq}>
             <div className="mb-10 flex justify-evenly">
