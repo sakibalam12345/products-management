@@ -4,7 +4,7 @@ import Useaxiouspublic from "../Axious/Useaxiouspublic";
 
 const useReqasset = () => {
     const axiouspublic = Useaxiouspublic();
-    const {data : assetreq=[]} = useQuery({
+    const {data : assetreq=[],refetch} = useQuery({
   queryKey : ['assetreq'],
   queryFn : async ()=>{
      const res = await axiouspublic.get('/assetreq')
@@ -12,7 +12,7 @@ const useReqasset = () => {
  
   }
     })
-    return [assetreq]
+    return [assetreq,refetch]
 };
 
 export default useReqasset;
