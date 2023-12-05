@@ -10,27 +10,28 @@ const Dashboard = () => {
     const navigate = useNavigate();
     const {user} = useContext(AuthContext);
     const [employee] = useEmploye();
-    const mactheemployee = employee.find(emp=> emp.email === user?.email && emp.role === 'employee')
+    const mactheemployee = employee.find(emp=> emp.email === user?.email && emp.role === 'admin')
     // console.log(user)
     
     const navlinks = <>
     {
-      mactheemployee ? <> <li><NavLink to='/dashboard/emphome'>Home</NavLink></li>
-      <li><NavLink to='/dashboard/myassets'>My Assets</NavLink></li>
-      <li><NavLink to='/dashboard/myteam'>My Team</NavLink></li>
-      <li><NavLink to='/dashboard/reqforasset'>Request for an Asset</NavLink></li>
-      <li><NavLink to='/dashboard/customasset'>Make a Custom Request</NavLink></li>
-      <li><NavLink to='/dashboard/profile'>Profile</NavLink></li> </> :
-       <> 
-       <li><NavLink to='/dashboard/adminhome'>Home</NavLink></li>
-      <li><NavLink to='/dashboard/adminassetlist'> Asset List</NavLink></li>
-      <li><NavLink to='/dashboard/adminaddanasset'>Add an Asset</NavLink></li>
-      <li><NavLink to='/dashboard/adminallreq'>All Requests</NavLink></li>
-      <li><NavLink to='/dashboard/admincustomreqlist'>Custom Requests List</NavLink></li>
-      <li><NavLink to='/dashboard/adminemployelist'>My Employee List</NavLink></li>
-      <li><NavLink to='/dashboard/adminaddemploye'>Add an Employee</NavLink></li>
-      <li><NavLink to='/dashboard/profile'>Profile</NavLink></li>
-       </>
+      mactheemployee ? <>  
+      <li><NavLink to='/dashboard/adminhome'>Home</NavLink></li>
+     <li><NavLink to='/dashboard/adminassetlist'> Asset List</NavLink></li>
+     <li><NavLink to='/dashboard/adminaddanasset'>Add an Asset</NavLink></li>
+     <li><NavLink to='/dashboard/adminallreq'>All Requests</NavLink></li>
+     <li><NavLink to='/dashboard/admincustomreqlist'>Custom Requests List</NavLink></li>
+     <li><NavLink to='/dashboard/adminemployelist'>My Employee List</NavLink></li>
+     <li><NavLink to='/dashboard/adminaddemploye'>Add an Employee</NavLink></li>
+     <li><NavLink to='/dashboard/profile'>Profile</NavLink></li>
+      </> :
+      <>
+       <li><NavLink to='/dashboard/emphome'>Home</NavLink></li>
+       <li><NavLink to='/dashboard/myassets'>My Assets</NavLink></li>
+       <li><NavLink to='/dashboard/myteam'>My Team</NavLink></li>
+       <li><NavLink to='/dashboard/reqforasset'>Request for an Asset</NavLink></li>
+       <li><NavLink to='/dashboard/customasset'>Make a Custom Request</NavLink></li>
+       <li><NavLink to='/dashboard/profile'>Profile</NavLink></li> </>
     }
     
    </>

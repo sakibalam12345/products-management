@@ -61,7 +61,7 @@ const Aemployelist = () => {
       </tr>
     </thead>
     <tbody>
-      {/* row 1 */}
+     
       {employee.map((person,index)=> <tr key={person._id}>
         <th>
           <label>
@@ -89,13 +89,6 @@ const Aemployelist = () => {
  
     </tbody>
    
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
-        <th></th>
-      </tr>
    
     
   </table>

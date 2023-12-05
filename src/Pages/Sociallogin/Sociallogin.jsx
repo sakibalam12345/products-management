@@ -12,7 +12,7 @@ const Sociallogin = () => {
         googlelogin()
         .then(res=>{
             console.log(res.user)
-            navigate('/')
+            navigate('/dashboard/emphome')
 
         })
         .catch(err=>{
