@@ -1,8 +1,16 @@
-# React + Vite
+# Title
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Products Management
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Employee and Admin can register specifically
+- Employee can request for asset and can make custom Asset
+- Admin can accept asset request and can reject
+- Admin can see his employee member and their upcomimg birthday
+- user can login with google
+
+
+## 🔗 Live site link
+
+- https://wondrous-melba-f3f6a5.netlify.app
